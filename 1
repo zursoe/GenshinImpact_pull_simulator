@@ -1,0 +1,11 @@
+using namespace std;
+
+bool isUP; // 用于标记上一次抽到的5星是常驻还是当期UP
+int simulations = 10000; // 模拟次数，可以增加以获得更准确的结果
+
+double generateRandom() {
+    static random_device rd;
+    static mt19937 generator(rd());
+    static uniform_real_distribution<> distribution(0.0, 1.0);
+    return distribution(generator);
+}
